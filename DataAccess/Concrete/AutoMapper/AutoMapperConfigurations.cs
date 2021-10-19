@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
-using AutoMapper.Configuration;
+﻿using AutoMapper;
+using Entities.Dtos;
+using Entities.Entities;
 
 namespace DataAccess.Concrete.AutoMapper
 {
-    public class AutoMapperConfigurations: Profile
+    public class AutoMapperConfigurations : Profile
     {
-
+        public AutoMapperConfigurations()
+        {
+            CreateMap<Products, ProductsDto>();
+        }
     }
 }

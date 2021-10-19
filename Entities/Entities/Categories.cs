@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Entities.Concrete;
+using Entities.Interfaces;
 
-namespace Entities.Abstract.Entities
+namespace Entities.Entities
 {
     public class Categories: IEntity
     {

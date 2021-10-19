@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using Entities.Abstract.Entities;
+﻿using System.Reflection;
+using Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess
@@ -14,12 +11,12 @@ namespace DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=.;Database=Northwind;Trusted_Connection=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(DbContext)));
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(NorthwindDbContext)));
         }
     }
 }
